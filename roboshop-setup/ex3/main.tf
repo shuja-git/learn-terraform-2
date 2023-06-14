@@ -1,15 +1,25 @@
 resource "aws_instance" "ec2" {
-  count = length(var.instances)
+  for_each = var.instances
   ami           = "ami-03265a0778a880afb"
-  instance_type = "t3.micro"
+  instance_type = each.value["type"]
   vpc_security_group_ids = ["sg-0e091f7374dd1d5de"]
   tags = {
-    Name = var.instances[count.index]
+    Name = each.value["name"]
   }
 }
 variable "instances" {
-  default = ["cart","catalogue","shipping","payment","user"]
-}
-output "public-ip" {
-  value = aws_instance.ec2.*.public_ip
+  default = {
+    cart = {
+      name = "cart"
+      type = "t2.micro"
+    },
+    catalogue = {
+      name = "catalogue"
+      type = "t3.micro"
+    },
+    user = {
+      name = "user"
+      type = "t2.micro"
+    }
+  }
 }
