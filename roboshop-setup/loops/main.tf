@@ -1,8 +1,16 @@
 resource "null_resource" "nothing" {
-  count = length(var.d1)
-  name = var.d1[count.index]
+  for_each = var.d1
 
 }
 variable "d1" {
-  default = ["apple","banana"]
+  default = {
+    apple = {
+      fruit = "apple"
+      count = 3
+    },
+    banana = {
+      fruit = "banana"
+      count = 30
+    }
+  }
 }
