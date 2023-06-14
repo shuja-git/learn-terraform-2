@@ -24,7 +24,7 @@ variable "instances" {
   }
 }
 output "ec2-details" {
-  value = [for k,v in aws_instance.ec2: v.private_dns]
+  value = [for k,v in aws_instance.ec2: "${k} - ${v.private_dns}"]
 }
 #output "ec2" {
 #  value = [for k, v in aws_instance.ec2: "${k} - ${v.public_ip}"]
