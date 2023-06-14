@@ -23,3 +23,6 @@ variable "instances" {
     }
   }
 }
+output "ec2" {
+  value = aws_instance.ec2["catalogue"].public_ip
+}
