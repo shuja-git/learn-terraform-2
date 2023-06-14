@@ -11,5 +11,5 @@ variable "instances" {
   default = ["cart","catalogue","shipping","payment","user"]
 }
 output "public-ip" {
-  value = aws_instance.ec2.public_ip
+  value = aws_instance.ec2.*.public_ip
 }
