@@ -26,7 +26,7 @@ resource "aws_route53_record" "cart-rec" {
   name    = "cart-dev.shujadevops.online"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.cart.private_ip]
 }
 resource "aws_instance" "catalogue" {
   ami           = "ami-03265a0778a880afb"
@@ -41,7 +41,7 @@ resource "aws_route53_record" "catalogue-rec" {
   name    = "catalogue-dev.shujadevops.online"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.catalogue.private_ip]
 }
 resource "aws_instance" "user" {
   ami           = "ami-03265a0778a880afb"
@@ -56,7 +56,7 @@ resource "aws_route53_record" "user-rec" {
   name    = "user-dev.shujadevops.online"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.user.private_ip]
 }
 resource "aws_instance" "shipping" {
   ami           = "ami-03265a0778a880afb"
@@ -71,7 +71,7 @@ resource "aws_route53_record" "shipping-rec" {
   name    = "shipping-dev.shujadevops.online"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.shipping.private_ip]
 }
 resource "aws_instance" "payment" {
   ami           = "ami-03265a0778a880afb"
@@ -86,7 +86,7 @@ resource "aws_route53_record" "payment-rec" {
   name    = "payment-dev.shujadevops.online"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.payment.private_ip]
 }
 resource "aws_instance" "mysql" {
   ami           = "ami-03265a0778a880afb"
@@ -101,7 +101,7 @@ resource "aws_route53_record" "mysql-rec" {
   name    = "mysql-dev.shujadevops.online"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.mysql.private_ip]
 }
 resource "aws_instance" "mongodb" {
   ami           = "ami-03265a0778a880afb"
@@ -116,7 +116,7 @@ resource "aws_route53_record" "mongodb-rec" {
   name    = "mongodb-dev.shujadevops.online"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.mongodb.private_ip]
 }
 resource "aws_instance" "redis" {
   ami           = "ami-03265a0778a880afb"
@@ -131,7 +131,7 @@ resource "aws_route53_record" "redis-rec" {
   name    = "redis-dev.shujadevops.online"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.redis.private_ip]
 }
 resource "aws_instance" "rabbitmq" {
   ami           = "ami-03265a0778a880afb"
@@ -146,5 +146,5 @@ resource "aws_route53_record" "rabbitmq-rec" {
   name    = "rabbitmq-dev.shujadevops.online"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.rabbitmq.private_ip]
 }
