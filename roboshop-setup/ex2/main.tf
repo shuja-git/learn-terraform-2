@@ -11,5 +11,5 @@ variable "d1" {
   ]
 }
 output "d1-val" {
-  value = var.d1.*.course_name
+  value = var.d1[count.index].course_name
 }
