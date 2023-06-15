@@ -1,6 +1,6 @@
-module "ec2" {
+module "ec22" {
   for_each = var.instances
-  source = "./ec2"
+  source = "./ec22"
   component = each.value["name"]
   instance_type = each.value["type"]
   sg_id  = module.sg.sg_id
