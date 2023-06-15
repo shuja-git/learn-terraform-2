@@ -8,7 +8,15 @@ module "ec2" {
 
 module "sg" {
   source = "./sg"
-
 }
+
+module "route53" {
+  source = "./route53"
+}
+
+output "private-ip" {
+  value = module.route53
+}
+
 
 
