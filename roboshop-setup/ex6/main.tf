@@ -15,7 +15,7 @@ module "route53" {
 }
 
 output "private-ip" {
-  value = module.route53
+  value = module.ec22
 }
 
 
