@@ -1,5 +1,5 @@
 resource "aws_security_group" "sg" {
-name = "sg-allow-all"
+name = "securityGroup"
 description = "Allow HTTP and SSH traffic via Terraform"
 
 ingress {
