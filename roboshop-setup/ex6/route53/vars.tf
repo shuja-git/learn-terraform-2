@@ -1,1 +1,1 @@
-variable "component" {}
+#variable "component" {}
