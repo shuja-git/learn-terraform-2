@@ -5,3 +5,10 @@ module "ec2" {
   instance_type = each.value["type"]
 }
 
+module "sg" {
+  source = "./sg"
+}
+
+output "sg_id" {
+  value = module.sg
+}
